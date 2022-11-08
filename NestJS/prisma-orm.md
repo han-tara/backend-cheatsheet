@@ -12,8 +12,9 @@ npx prisma migrate dev //run after editing schema
 npx prisma generate //run to generate client
 ```
 ## Setup service
-prisma.service.ts
 ```
+prisma.service.ts
+
 export class PrismaService extends PrismaClient {
     constructor(private config: ConfigService) {
         super({
@@ -28,8 +29,9 @@ export class PrismaService extends PrismaClient {
 ```
 
 ## Export service (globally)
-prima.module.ts
 ```
+prima.module.ts
+
 @Global()
 @Module({
     providers: [PrismaService],
@@ -38,8 +40,9 @@ prima.module.ts
 ```
 
 ## Using the service
-auth.service.ts
 ```
+auth.service.ts
+
 //inside a class
 constructor(private prisma: PrismaService){}
 
